@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker - History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="logo">💰</span>
+                <h1>Finance Tracker</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="add-expense.html">Add Expense</a></li>
+                <li><a href="history.html" class="active">History</a></li>
+            </ul>
+        </nav>
+
+        <!-- History Page -->
+        <main class="history-page">
+            <div class="history-header">
+                <h2>Transaction History</h2>
+                <div class="history-actions">
+                    <button id="clearAllBtn" class="btn btn-danger">Clear All Data</button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div id="categoryFilter">
+                    <!-- React CategoryFilter component will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Transactions List -->
+            <section class="transactions-section">
+                <div id="transactionsList" class="transactions-list">
+                    <!-- React ExpenseCard components will be rendered here -->
+                </div>
+                <div id="emptyState" class="empty-state hidden">
+                    <div class="empty-icon">📭</div>
+                    <h3>No transactions found</h3>
+                    <p>Start by adding your first transaction!</p>
+                    <a href="add-expense.html" class="btn btn-primary">Add Transaction</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Load React from CDN (production builds for stability) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your JavaScript -->
+    <script src="storage.js"></script>
+    <script src="history.js"></script>
+    
+    <!-- Simple Direct Render (no React complexity) -->
+    <script src="app-history-simple.jsx"></script>
+</body>
+</html>
